@@ -148,7 +148,7 @@ const [savingTrip, setSavingTrip] = useState(false);
 const [completingTripId, setCompletingTripId] = useState<number | null>(null);
 const [tripMessage, setTripMessage] = useState("");
 
-  const API_URL = "";
+  const API_URL = "https://wanderai-backend-x8c9.onrender.com";
   // FETCH TRIPS AND PROFILE STATISTICS
   const fetchTripData = async () => {
     const token = localStorage.getItem("wanderai_token");
