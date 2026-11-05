@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
@@ -17,9 +19,14 @@ app = FastAPI(
 
 models.Base.metadata.create_all(bind=engine)
 
+frontend_url = os.getenv("FRONTEND_URL", "")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:5174",
+        frontend_url,
+    ] if frontend_url else [
         "http://localhost:5173",
         "http://localhost:5174",
     ],
