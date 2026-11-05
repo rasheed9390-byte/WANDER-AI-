@@ -984,7 +984,7 @@ const [tripMessage, setTripMessage] = useState("");
                     setPlannerLoading(true);
 
                     const response = await fetch(
-                      "http://127.0.0.1:8000/planner/generate",
+                      `${API_URL}/planner/generate`,
                       {
                         method: "POST",
                         headers: {
